@@ -64,6 +64,12 @@ body {
       }
     }
 
+    section#form {
+      .paws-up-to-container {
+        padding: 100px 0;
+      }
+    }
+
     section#about {
       background-color: $about-bg;
 
