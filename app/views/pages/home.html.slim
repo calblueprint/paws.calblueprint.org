@@ -13,3 +13,7 @@
         .col-md-8.col-md-offset-2
           .paws-up-to-container.center
             h1 Who do you want to send Paws Up to?
+            = simple_form_for @paws_up do |f|
+              = f.collection_select :user_id, User.all, :id, :name, {prompt: "Select a blooper"}
+              = f.input :description, label: "What are you giving it for?", label_html: "large-question"
+              = f.button :submit
