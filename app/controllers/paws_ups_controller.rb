@@ -1,0 +1,2 @@
+class PawsUpsController < ApplicationController
+end
