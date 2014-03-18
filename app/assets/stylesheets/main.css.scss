@@ -28,6 +28,11 @@ body {
     font-weight: 300;
   }
 
+  .large-question {
+    font-weight: 300;
+    font-size: 36px;
+  }
+
   .flat-button {
     display: inline-block;
     padding: 15px 60px;
@@ -37,13 +42,22 @@ body {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     color: #FFF;
-    background-color: $founders-rock-blue;
+    background-color: $blueprint-blue;
     text-transform: uppercase;
     margin-top: 15px;
     margin-bottom: 15px;
     top: 0;
     font-size: 16px;
     font-weight: 700;
+  }
+
+  .flat-button:hover {
+    color: #FFF;
+  }
+
+  .medium {
+    width: 300px;
+    margin: auto;
   }
 
   .round-with-border {
