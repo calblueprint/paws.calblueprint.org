@@ -1,0 +1,28 @@
+.main
+  .container
+    .row
+      .col-md-12
+        - if params[:secret] == ENV["secret"]
+          .this-week-container
+            h1 Paws Up From This Week
+            - @current_paws_up.each do |paws_up|
+              .paws_up
+                | Paws Up to 
+                = paws_up.recipient
+                |  for 
+                = paws_up.description
+          .previous-container
+            h1 Paws Up From Previous Weeks
+            - @previous_paws_up.each do |paws_up|
+              .paws_up
+                | Paws Up to 
+                = paws_up.recipient
+                |  for 
+                = paws_up.description
+        - else
+          .secret-text-box
+            = form_tag "view", method: :get do |f|
+              = text_field_tag :secret, params[:secret], class: "form-control small-form"
+              .submit-button
+                = submit_tag "Enter", class: "flat-button"
+

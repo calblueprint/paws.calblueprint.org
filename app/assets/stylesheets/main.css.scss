@@ -33,6 +33,25 @@ body {
     margin-top: 20px;
   }
 
+  .secret-text-box {
+    margin-top: 25%;
+    text-align: center;
+  }
+
+  .small-form {
+    width: 200px;
+    margin: auto;
+  }
+
+  .footer {
+    p {
+      color: white;
+      background-color: $blueprint-blue;
+      padding: 20px;
+      margin: 0;
+    }
+  }
+
   .large-question {
     font-weight: 300;
     font-size: 36px;

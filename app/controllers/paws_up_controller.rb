@@ -11,6 +11,16 @@ class PawsUpController < ApplicationController
     end
   end
 
+  def index
+    if params[:secret].nil? || params[:secret] == ENV["secret"]
+      @current_paws_up = PawsUp.where('created_at > ?', 1.week.ago).order('created_at DESC')
+      @previous_paws_up = PawsUp.where('created_at < ?', 1.week.ago).order('created_at DESC')
+    else
+      flash[:danger] = "You are not allowed to view this page."
+      redirect_to root_path
+    end
+  end
+
   private
 
   def paws_up_params
