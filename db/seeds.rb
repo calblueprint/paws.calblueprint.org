@@ -40,7 +40,9 @@ bloopers = [
 
 bloopers.each do |blooper|
   user = User.where(name: blooper).first_or_create!
-  if user.new_record?
+  unless user.persisted?
     puts "Created: #{user.name}."
+  else
+    puts "Already had user: #{user.name}."
   end
 end
