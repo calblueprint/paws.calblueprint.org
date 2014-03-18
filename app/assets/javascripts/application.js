@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+
+  $("#typer").typed({
+    strings: ["for being awesome.", "for being fun.", "for being sexy.", "for being the best thing to happen. Ever."],
+    typeSpeed: 80,
+    backDelay: 500
+  });
+
+});
