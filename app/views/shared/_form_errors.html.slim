@@ -1,0 +1,11 @@
+- if errors.any?
+  .container
+    .row
+      .col-md-12
+        .alert.alert-danger#error-explanation
+          h2.error-heading
+            = pluralize(errors.count, "error")
+            | prohibited this form from being saved:
+          ul
+            - errors.full_messages.each do |message|
+              li = message

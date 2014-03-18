@@ -3,9 +3,11 @@ class PawsUpController < ApplicationController
   def create
     @paws_up = PawsUp.new(paws_up_params)
     if @paws_up.save
-      redirect_to root_path, success: "Successfully sent Paws Up!"
+      flash[:success] = "Successfully sent your Paws Up!"
+      redirect_to root_path
     else
-      redirect_to root_path, error: "There was a problem sending your Paws Up, please try again."
+      flash[:danger] = "There was a problem sending your Paws Up, please try again."
+      redirect_to root_path
     end
   end
 

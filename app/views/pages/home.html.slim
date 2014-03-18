@@ -14,6 +14,8 @@
       .row
         .col-md-8.col-md-offset-2
           .paws-up-to-container.center
+            = render partial: "shared/form_errors", locals: {errors: @paws_up.errors}
+            = render partial: "shared/errors"
             h1 Who do you want to send Paws Up to?
             = simple_form_for @paws_up do |f|
               = f.collection_select :user_id, User.all.order(:name), :id, :name, {prompt: "Select a blooper"}, class: "form-control medium center"
