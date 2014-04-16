@@ -21,7 +21,7 @@
                 = paws_up.description
         - else
           .secret-text-box
-            = form_tag "view", method: :get do |f|
+            = form_tag "secret", method: :post do |f|
               = text_field_tag :secret, params[:secret], class: "form-control small-form"
               .submit-button
                 = submit_tag "Enter", class: "flat-button"
