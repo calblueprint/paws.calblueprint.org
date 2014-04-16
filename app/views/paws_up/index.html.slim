@@ -22,7 +22,7 @@
         - else
           .secret-text-box
             = form_tag "secret", method: :post do |f|
-              = text_field_tag :secret, params[:secret], class: "form-control small-form"
+              = password_field_tag :secret, params[:secret], class: "form-control small-form"
               .submit-button
                 = submit_tag "Enter", class: "flat-button"
 
