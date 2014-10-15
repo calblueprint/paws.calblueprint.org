@@ -36,6 +36,21 @@ bloopers = [
   "Kevin Wu",
   "Justin Chan",
   "Jennifer Min",
+  "Max Wolfe",
+  "Andrew Millman",
+  "Elizabeth Lin",
+  "Tricia Fu",
+  "Quinton Dang",
+  "Warren Shen",
+  "Jordeen Chang",
+  "Erica Yin",
+  "Jason Won",
+  "Noah Gilmore",
+  "Harrison Tsai",
+  "Jessica Shen",
+  "Byron Zhang",
+  "Eileen Li",
+  "Eric Shen",
 ]
 
 bloopers.each do |blooper|
