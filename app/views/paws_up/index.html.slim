@@ -7,18 +7,12 @@
             h1 Paws Up From This Week
             - @current_paws_up.each do |paws_up|
               .paws_up
-                | Paws Up to 
-                = paws_up.recipient
-                |  for 
-                = paws_up.description
+                = paws_up
           .previous-container
             h1 Paws Up From Previous Weeks
             - @previous_paws_up.each do |paws_up|
               .paws_up
-                | Paws Up to 
-                = paws_up.recipient
-                |  for 
-                = paws_up.description
+                = paws_up
         - else
           .secret-text-box
             = form_tag "secret", method: :post do |f|
