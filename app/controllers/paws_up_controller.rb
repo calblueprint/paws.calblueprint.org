@@ -24,7 +24,7 @@ class PawsUpController < ApplicationController
   private
 
   def paws_up_params
-    params.require(:paws_up).permit(:user_id, :description, :custom_for)
+    params.require(:paws_up).permit(:user_id, :description, :custom_for, :value)
   end
 
 end
