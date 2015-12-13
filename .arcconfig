@@ -1,0 +1,9 @@
+{
+  "phabricator.uri": "http://phab.calblueprint.org",
+  "history.immutable": false,
+  "project.name": "pawsup",
+  "load": [
+    "$TRAPHIC_PATH"
+  ],
+  "arcanist_configuration": "TraphicConfiguration"
+}

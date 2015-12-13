@@ -1,60 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require "open-uri"
 
-bloopers = [
-  "Melissa Huang",
-  "Mark Miyashita",
-  "Alice Oh",
-  "Jessica Lin",
-  "Wonjun Jeong",
-  "Kevin Gong",
-  "Tony Wu",
-  "Atsu Kakitani",
-  "Sam Lau",
-  "Hao Guan",
-  "Nishant Desai",
-  "Alli Leong",
-  "Ethan Chiou",
-  "Will Tang",
-  "Varun Rau",
-  "Anthony Sutardja",
-  "Vivek Raghuram",
-  "John Du",
-  "Eugene Kim",
-  "Jonathan Ho",
-  "Byron Zhang",
-  "Howard Chen",
-  "Vincent Tian",
-  "Alton Zheng-Xie",
-  "Brian Liou",
-  "Deeps Warrier",
-  "Kevin Wu",
-  "Justin Chan",
-  "Jennifer Min",
-  "Max Wolfe",
-  "Andrew Millman",
-  "Elizabeth Lin",
-  "Tricia Fu",
-  "Quinton Dang",
-  "Warren Shen",
-  "Jordeen Chang",
-  "Erica Yin",
-  "Jason Won",
-  "Noah Gilmore",
-  "Harrison Tsai",
-  "Jessica Shen",
-  "Byron Zhang",
-  "Eileen Li",
-  "Eric Shen",
-]
+# Most accurate record of current Blueprint members
+MEMBERS_FILE =
+  "https://raw.githubusercontent.com/calblueprint/calblueprint.org/master/data/members.yml"
+
+bloopers = YAML.parse(open(MEMBERS_FILE)).to_ruby['members']
 
 bloopers.each do |blooper|
-  user = User.where(name: blooper).first_or_create!
+  user = User.where(name: "#{blooper['first_name']} #{blooper['last_name']}").first_or_create!
   unless user.persisted?
     puts "Created: #{user.name}."
   else
