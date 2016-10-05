@@ -18,7 +18,7 @@
             = render partial: "shared/errors"
             h1 Who do you want to send Paws Up to?
             = simple_form_for @paws_up do |f|
-              = f.collection_select :user_id, User.all.order(:name), :id, :name, {prompt: "Select a blueper"}, class: "form-control medium center"
+              = f.collection_select :user_id, User.where(inactive: false).order(:name), :id, :name, {prompt: "Select a blueper"}, class: "form-control medium center"
               = f.input :custom_for, input_html: {class: "form-control medium"}, label: "Or for a group of bluepers:", label_html: {class: "large-question"}
               = f.input :description, as: :text, input_html: {class: "form-control medium"}, label: "What are you giving it for?", label_html: {class: "large-question"}
               = f.input :value, collection: Values.collection, input_html: {class: "form-control medium"}, label: "What value does it represent?", label_html: {class: "large-question"}
