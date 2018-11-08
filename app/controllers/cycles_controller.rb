@@ -1,4 +1,4 @@
-class CycleController < ApplicationController
+class CyclesController < ApplicationController
 
   def create
     Cycle.create
