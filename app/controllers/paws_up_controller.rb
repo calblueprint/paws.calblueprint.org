@@ -14,8 +14,8 @@ class PawsUpController < ApplicationController
 
   def index
     if params[:secret].nil? || params[:secret] == ENV["secret"]
-      @current_paws_up = PawsUp.where(cycle: Cycle.last).order('created_at DESC')
-      @previous_paws_up = PawsUp.where.not(cycle: Cycle.last).order('created_at DESC')
+      @current_paws_up = PawsUp.where(cycle: Cycle.last).order(created_at: :desc)
+      @previous_paws_up = PawsUp.where.not(cycle: Cycle.last).order(created_at: :desc)
     else
       flash[:danger] = "You are not allowed to view this page."
       redirect_to root_path
