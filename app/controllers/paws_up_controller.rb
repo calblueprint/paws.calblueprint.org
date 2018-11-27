@@ -1,8 +1,12 @@
 class PawsUpController < ApplicationController
 
   def create
-    @paws_up = PawsUp.new(paws_up_params)
-    @paws_up.cycle = Cycle.last
+    if Cycle.count > 0
+      @paws_up = Cycle.last.paws_ups.new(paws_up_params)
+    else
+      @paws_up = PawsUp.new(paws_up_params)
+    end
+    
     if @paws_up.save
       flash[:success] = "Successfully sent your Paws Up!"
       redirect_to root_path
