@@ -15,6 +15,7 @@
 class PawsUp < ActiveRecord::Base
   validates :description, presence: true
   validate :has_user_id_or_custom_for
+  belongs_to :cycle
 
   def has_user_id_or_custom_for
     if self.user_id.nil? && self.custom_for.empty?

@@ -3,6 +3,7 @@
     .row
       .col-md-12
         - if params[:secret] == ENV["secret"]
+          = button_to "Create New Paws Up Cycle", cycles_path, class: "flat-button"
           .this-week-container
             h1 Paws Up From This Week
             - @current_paws_up.each do |paws_up|
@@ -19,4 +20,3 @@
               = password_field_tag :secret, params[:secret], class: "form-control small-form"
               .submit-button
                 = submit_tag "Enter", class: "flat-button"
-

@@ -23,7 +23,6 @@ group :development, :test do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'bullet'
   gem 'commands'
   gem 'factory_girl'
   gem 'rails_best_practices'
