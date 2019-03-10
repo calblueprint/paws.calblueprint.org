@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.2'
 gem 'google-analytics-rails', '~> 0.0.6'
 gem 'devise', '~> 3.4.1'
 gem 'simple_form', '~> 3.1.0'
+gem 'sqlite3', '~> 1.3.6'
 
 group :doc do
   gem 'sdoc', require: false
