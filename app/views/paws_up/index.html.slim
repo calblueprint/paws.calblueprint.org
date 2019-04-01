@@ -12,9 +12,12 @@
                 = paws_up
           .previous-container
             h1 Paws Up From Previous Weeks
-            - @previous_paws_up.each do |paws_up|
-              .paws_up
-                = paws_up
+            - @previous_cycles.each do |cycle|
+              - PawsUp.where(cycle: cycle).each do |paws_up|
+                .paws_up
+                  = paws_up
+              br
+              br 
         - else
           .secret-text-box
             = form_tag "secret", method: :post do |f|
