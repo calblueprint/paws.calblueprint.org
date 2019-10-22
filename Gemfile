@@ -12,7 +12,7 @@ gem 'slim-rails', '~> 3.0.1'
 gem 'pg', '0.18.1'
 gem 'jbuilder', '~> 2.2'
 gem 'google-analytics-rails', '~> 0.0.6'
-gem 'devise', '~> 3.4.1'
+gem 'devise', '~> 4.7.1'
 gem 'simple_form', '~> 3.1.0'
 
 group :doc do
