@@ -1,5 +1,7 @@
 class PawsUpController < ApplicationController
 
+  EMOJIS = ['😁', '🤯', '🥱', '😽', '💩', '🤪', '🌞', '🌝'].freeze
+
   def create
     if Cycle.count > 0
       @paws_up = Cycle.last.paws_ups.new(paws_up_params)
@@ -21,6 +23,7 @@ class PawsUpController < ApplicationController
 
       @current_paws_up = PawsUp.where(cycle: Cycle.last).order(created_at: :desc)
       @previous_cycles = Cycle.where.not(id: Cycle.last.id).reverse_order
+      @emoji = EMOJIS.sample
       # @previous_paws_up = PawsUp.where.not(cycle: Cycle.last).order(created_at: :desc)
       if params[:random] != "false" 
         @current_paws_up = @current_paws_up.shuffle
