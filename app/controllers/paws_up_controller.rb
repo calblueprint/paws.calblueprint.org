@@ -19,7 +19,7 @@ class PawsUpController < ApplicationController
   end
 
   def index
-    if !params[:secret].nil? || params[:secret] == ENV["secret"]
+    if params[:secret].nil? || params[:secret] == ENV["secret"]
 
       @current_paws_up = PawsUp.where(cycle: Cycle.last).order(created_at: :desc)
       @previous_cycles = Cycle.where.not(id: Cycle.last.id).reverse_order
