@@ -5,8 +5,8 @@
         - if params[:secret] == ENV["secret"]
           = button_to "Create New Paws Up Cycle", cycles_path, class: "flat-button"
           .this-week-container
-            h1 Paws Up From This Week 
-            p = "There are #{@current_paws_up.count} paws up this week. Good luck Alivant! #{@emoji}"
+            h1 Paws Up From This Week
+            p = "There are #{@current_paws_up.count} paws up this week. Good luck Ace! #{@emoji}"
             - @current_paws_up.each do |paws_up|
               .paws_up
                 = paws_up
@@ -17,7 +17,7 @@
                 .paws_up
                   = paws_up
               br
-              br 
+              br
         - else
           .secret-text-box
             = form_tag "secret", method: :post do |f|

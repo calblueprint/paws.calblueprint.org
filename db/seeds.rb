@@ -2,7 +2,7 @@ require "open-uri"
 
 # Most accurate record of current Blueprint members
 MEMBERS_FILE =
-  "https://raw.githubusercontent.com/calblueprint/calblueprint.org/master/config/locales/en/members.yml"
+  "https://raw.githubusercontent.com/calblueprint/calblueprint.org/main/config/locales/en/members.yml"
 
 bloopers = YAML.parse(open(MEMBERS_FILE)).to_ruby['en']['members']
 
