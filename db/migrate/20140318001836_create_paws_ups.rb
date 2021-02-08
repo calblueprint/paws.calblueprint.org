@@ -1,4 +1,4 @@
-class CreatePawsUps < ActiveRecord::Migration
+class CreatePawsUps < ActiveRecord::Migration[6.1]
   def change
     create_table :paws_ups do |t|
       t.references :user

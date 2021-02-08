@@ -12,7 +12,7 @@
 #  value        :string
 #
 
-class PawsUp < ActiveRecord::Base
+class PawsUp < ApplicationRecord
   validates :description, presence: true
   validate :has_user_id_or_custom_for
   belongs_to :cycle

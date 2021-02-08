@@ -8,7 +8,7 @@ class PawsUpController < ApplicationController
     else
       @paws_up = PawsUp.new(paws_up_params)
     end
-    
+
     if @paws_up.save
       flash[:success] = "Successfully sent your Paws Up!"
       redirect_to root_path
@@ -19,13 +19,17 @@ class PawsUpController < ApplicationController
   end
 
   def index
-    if params[:secret].nil? || params[:secret] == ENV["secret"]
+    puts params
+    puts "index"
+    if !params[:secret].nil? || params[:secret] == ENV["secret"]
+      puts "is this working??"
+      puts params[:secret]
 
       @current_paws_up = PawsUp.where(cycle: Cycle.last).order(created_at: :desc)
       @previous_cycles = Cycle.where.not(id: Cycle.last.id).reverse_order
       @emoji = EMOJIS.sample
       # @previous_paws_up = PawsUp.where.not(cycle: Cycle.last).order(created_at: :desc)
-      if params[:random] != "false" 
+      if params[:random] != "false"
         @current_paws_up = @current_paws_up.shuffle
       end
     else

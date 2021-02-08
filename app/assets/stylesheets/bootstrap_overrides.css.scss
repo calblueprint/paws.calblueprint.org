@@ -1,3 +1,6 @@
+@import "colors";
+@import "config";
+
 $navbar-padding-top: 25px;
 $navbar-padding-bottom: 25px;
 
@@ -25,7 +28,8 @@ $navbar-padding-bottom: 25px;
   background-color: $blueprint-blue;
 }
 
-.nav > li > a:hover, .nav > li > a:focus,
+.nav > li > a:hover,
+.nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
   background-color: $lap-lane;
   color: white;

@@ -1,4 +1,8 @@
-html, body {
+@import "colors";
+@import "config";
+
+html,
+body {
   height: 100%;
 }
 
@@ -7,7 +11,7 @@ html, body {
 }
 
 body {
-  font-family: 'open sans';
+  font-family: "open sans";
   -webkit-font-smoothing: antialiased;
 
   .center {
@@ -19,7 +23,7 @@ body {
   }
 
   .dark-link {
-    color: rgba(0,0,0,0.85);
+    color: rgba(0, 0, 0, 0.85);
     text-decoration: none;
     font-weight: bold;
   }
@@ -32,7 +36,11 @@ body {
     text-decoration: underline;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-weight: 300;
   }
 
@@ -76,7 +84,7 @@ body {
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    color: #FFF;
+    color: #fff;
     background-color: $blueprint-blue;
     text-transform: uppercase;
     margin-top: 15px;
@@ -87,7 +95,7 @@ body {
   }
 
   .flat-button:hover {
-    color: #FFF;
+    color: #fff;
   }
 
   .medium {

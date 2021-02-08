@@ -1,3 +1,3 @@
-class Cycle < ActiveRecord::Base
-    has_many :paws_ups
+class Cycle < ApplicationRecord
+  has_many :paws_ups
 end
